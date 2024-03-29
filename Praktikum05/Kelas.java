@@ -1,6 +1,6 @@
 public class Kelas {
-    private Mahasiswa[] daftarMahasiswa;
-    private int index;
+    public Mahasiswa[] daftarMahasiswa;
+    public int index;
     
     public Kelas(int capacity) {
         daftarMahasiswa = new Mahasiswa[capacity];
