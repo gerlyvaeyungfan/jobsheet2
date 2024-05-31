@@ -29,10 +29,9 @@ public class Demo {
 
         Mahasiswa[] resultBinarySearch = kelas1A.binarySearchByUmur(18);
         if (resultBinarySearch.length > 0) {
-            System.out.print("Mahasiswa ditemukan berdasarkan umur (18): ");
+            System.out.println("Mahasiswa ditemukan berdasarkan umur (18):");
             for (Mahasiswa mahasiswa : resultBinarySearch) {
-                System.out.print(mahasiswa.getNama());
-                System.out.print(" ");
+                mahasiswa.displayInfo();
             }
         } else {
             System.out.println("Mahasiswa tidak ditemukan berdasarkan umur");
