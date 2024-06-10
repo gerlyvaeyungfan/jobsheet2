@@ -1,27 +1,27 @@
-public class Queue {
+public class QueueP {
     public Pasien[] antrian;
     public int front, rear, size, max;
 
-    public Queue(int max) {
+    public QueueP(int max) {
         this.max = max;
         this.antrian = new Pasien[max];
         this.front = this.rear = -1;
         this.size = 0;
     }
 
-    public boolean isEmpty() {
+    public boolean isEmptyP() {
         return (size == 0);
     }
 
-    public boolean isFull() {
+    public boolean isFullP() {
         return (size == max);
     }
 
-    public void enqueue(Pasien dt) {
-        if (isFull()) {
+    public void enqueueP(Pasien dt) {
+        if (isFullP()) {
             System.out.println("Antrian sudah penuh");
         } else {
-            if (isEmpty()) {
+            if (isEmptyP()) {
                 front = rear = 0;
             } else if (rear == max - 1) {
                 rear = 0;
@@ -35,16 +35,16 @@ public class Queue {
         }
     }
 
-    public int dequeue() {
+    public int dequeueP() {
         int temp = -1;
 
-        if (isEmpty()) {
+        if (isEmptyP()) {
             System.out.println("Antrian masih kosong");
         } else {
             temp = front;
             size--;
 
-            if (isEmpty()) {
+            if (isEmptyP()) {
                 front = rear = -1;
             } else if (front == max - 1) {
                 front = 0;
@@ -56,8 +56,8 @@ public class Queue {
         return temp;
     }
 
-    public void print() {
-        if (isEmpty()) {
+    public void printP() {
+        if (isEmptyP()) {
             System.out.println("Antrian kosong");
         } else {
             System.out.println("Daftar Pasien:");
@@ -72,8 +72,8 @@ public class Queue {
         }
     }
 
-    public void peek() {
-        if (!isEmpty()) {
+    public void peekP() {
+        if (!isEmptyP()) {
             System.out.println("Pasien terdepan:");
             System.out.println(antrian[front]);
         } else {
@@ -81,8 +81,8 @@ public class Queue {
         }
     }
 
-    public void peekRear() {
-        if (!isEmpty()) {
+    public void peekRearP() {
+        if (!isEmptyP()) {
             System.out.println("Pasien terbelakang:");
             System.out.println(antrian[rear]);
         } else {
@@ -90,8 +90,8 @@ public class Queue {
         }
     }
 
-    public void peekPosition(String nama) {
-        if (!isEmpty()) {
+    public void peekPositionP(String nama) {
+        if (!isEmptyP()) {
             int posisiRearSekarang = -1;
             for (int i = front; i != (rear + 1) % max; i = (i + 1) % max) {
                 if (antrian[i].nama.equals(nama)) {
@@ -110,7 +110,7 @@ public class Queue {
     }
 
     public void daftarPasien() {
-        if (!isEmpty()) {
+        if (!isEmptyP()) {
             System.out.println("Daftar Pasien:");
             int i = front;
 

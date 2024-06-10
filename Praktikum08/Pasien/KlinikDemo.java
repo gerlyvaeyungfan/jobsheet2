@@ -7,7 +7,7 @@ public class KlinikDemo {
         int kapasitas = sc.nextInt();
         sc.nextLine();
         
-        Queue antrianKlinik = new Queue(kapasitas);
+        QueueP antrianKlinik = new QueueP(kapasitas);
         int menu;
         
         do {
@@ -32,27 +32,27 @@ public class KlinikDemo {
                     System.out.print("Masukkan jenis kelamin (L/P): ");
                     char jenisKelamin = sc.nextLine().charAt(0);
                     Pasien newPasien = new Pasien(nama, noID, jenisKelamin);
-                    antrianKlinik.enqueue(newPasien);
+                    antrianKlinik.enqueueP(newPasien);
                     break;
                 case 2:
-                    int dequeuedIndex = antrianKlinik.dequeue();
+                    int dequeuedIndex = antrianKlinik.dequeueP();
                     if (dequeuedIndex != -1) {
                         System.out.println("Pasien terdepan telah dihapus dari antrian.");
                     }
                     break;
                 case 3:
-                    antrianKlinik.print();
+                    antrianKlinik.printP();
                     break;
                 case 4:
-                    antrianKlinik.peek();
+                    antrianKlinik.peekP();
                     break;
                 case 5:
-                    antrianKlinik.peekRear();
+                    antrianKlinik.peekRearP();
                     break;
                 case 6:
                     System.out.print("Masukkan nama pasien yang ingin dicek posisinya: ");
                     String namaPasien = sc.nextLine();
-                    antrianKlinik.peekPosition(namaPasien);
+                    antrianKlinik.peekPositionP(namaPasien);
                     break;
                 case 7:
                     System.out.println("Keluar dari program.");

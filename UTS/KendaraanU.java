@@ -1,10 +1,10 @@
-public class Kendaraan {
+public class KendaraanU {
     private String tipe;
     private String plat;
     private int durasi;
-    private int biaya;
+    private double biaya;
 
-    public Kendaraan(String tipe, String plat, int durasi) {
+    public KendaraanU(String tipe, String plat, int durasi) {
         this.tipe = tipe;
         this.plat = plat;
         this.durasi = durasi;
@@ -18,19 +18,19 @@ public class Kendaraan {
         }
     }
 
-    public String getTipe() {
+    public String getTipeU() {
         return tipe;
     }
 
-    public String getPlat() {
+    public String getPlatU() {
         return plat;
     }
 
-    public int getDurasi() {
+    public int getDurasiU() {
         return durasi;
     }
 
-    public int getBiaya() {
+    public double getBiayaU() {
         return biaya;
     }
 }

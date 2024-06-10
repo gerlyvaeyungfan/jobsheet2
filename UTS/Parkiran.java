@@ -1,13 +1,13 @@
 public class Parkiran {
-    public Kendaraan[] daftarKendaraan;
+    public KendaraanU[] daftarKendaraan;
     public int index;
 
     public Parkiran(int kapasitas) {
-        daftarKendaraan = new Kendaraan[kapasitas];
+        daftarKendaraan = new KendaraanU[kapasitas];
         index = 0;
     }
 
-    public void tambah(Kendaraan kendaraan) {
+    public void tambah(KendaraanU kendaraan) {
         if (index < daftarKendaraan.length) {
             daftarKendaraan[index++] = kendaraan;
         } else {
@@ -15,15 +15,15 @@ public class Parkiran {
         }
     }
 
-    public Kendaraan[] binarySearchByPlat(String plat) {
-        Kendaraan[] tempResult = new Kendaraan[index];
+    public KendaraanU[] binarySearchByPlat(String plat) {
+        KendaraanU[] tempResult = new KendaraanU[index];
         int resultIndex = 0;
         for (int i = 0; i < index; i++) {
-            if (daftarKendaraan[i].getPlat().toLowerCase().contains(plat.toLowerCase())) {
+            if (daftarKendaraan[i].getPlatU().toLowerCase().contains(plat.toLowerCase())) {
                 tempResult[resultIndex++] = daftarKendaraan[i];
             }
         }
-        Kendaraan[] result = new Kendaraan[resultIndex];
+        KendaraanU[] result = new KendaraanU[resultIndex];
         for (int i = 0; i < resultIndex; i++) {
             result[i] = tempResult[i];
         }
@@ -32,7 +32,9 @@ public class Parkiran {
 
     public void displayInfoParkir() {
         for (int i = 0; i < index; i++) {
-            System.out.println("Tipe: " + daftarKendaraan[i].getTipe() + ", No Plat: " + daftarKendaraan[i].getPlat() + ", Durasi: " + daftarKendaraan[i].getDurasi() + " jam, Biaya: " + daftarKendaraan[i].getBiaya());
+            System.out.println("Tipe: " + daftarKendaraan[i].getTipeU() + ", No Plat: " +
+            daftarKendaraan[i].getPlatU() + ", Durasi: " + daftarKendaraan[i].getDurasiU() +
+            " jam, Biaya: " + daftarKendaraan[i].getBiayaU());
         }
     }
 
@@ -43,8 +45,8 @@ public class Parkiran {
             System.out.println("\nData parkiran:");
             for (int i = 0; i < index - 1; i++) {
                 for (int j = 0; j < index - i - 1; j++) {
-                    if (daftarKendaraan[j].getBiaya() < daftarKendaraan[j + 1].getBiaya()) {
-                        Kendaraan temp = daftarKendaraan[j];
+                    if (daftarKendaraan[j].getBiayaU() < daftarKendaraan[j + 1].getBiayaU()) {
+                        KendaraanU temp = daftarKendaraan[j];
                         daftarKendaraan[j] = daftarKendaraan[j + 1];
                         daftarKendaraan[j + 1] = temp;
                     }
@@ -53,7 +55,9 @@ public class Parkiran {
         }
 
         for (int i = 0; i < index; i++) {
-            System.out.println("Tipe: " + daftarKendaraan[i].getTipe() + ", No Plat: " + daftarKendaraan[i].getPlat() + ", Durasi: " + daftarKendaraan[i].getDurasi() + " jam, Biaya: " + daftarKendaraan[i].getBiaya());
+            System.out.println("Tipe: " + daftarKendaraan[i].getTipeU() + ", No Plat: " +
+            daftarKendaraan[i].getPlatU() + ", Durasi: " + daftarKendaraan[i].getDurasiU() +
+            " jam, Biaya: " + daftarKendaraan[i].getBiayaU());
         }
     }
 }

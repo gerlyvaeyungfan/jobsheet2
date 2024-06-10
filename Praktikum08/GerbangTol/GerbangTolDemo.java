@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class GerbangTolDemo {
@@ -7,7 +8,7 @@ public class GerbangTolDemo {
         int kapasitas = sc.nextInt();
         int menu;
 
-        Queue myQueue = new Queue(kapasitas);
+        Queue8 myQueueK = new Queue8(kapasitas);
         do {
             System.out.println("\nMasukkan operasi yang diinginkan");
             System.out.println("1. Enqueue");
@@ -29,12 +30,12 @@ public class GerbangTolDemo {
                     System.out.print("Masukkan saldo: ");
                     double saldo = sc.nextInt();
 
-                    Kendaraan newKendaraan = new Kendaraan(noPlat, noKartu, saldo);
-                    myQueue.enqueue(newKendaraan);
+                    Kendaraan8 newKendaraan = new Kendaraan8(noPlat, noKartu, saldo);
+                    myQueueK.enqueue8(newKendaraan);
 
                     break;
                 case 2:
-                    Kendaraan deletedData = myQueue.dequeue();
+                    Kendaraan8 deletedData = myQueueK.dequeue8();
     
                     if (deletedData != null) {
                         System.out.println("Data yang dikeluarkan:");
@@ -42,15 +43,15 @@ public class GerbangTolDemo {
                     }
                     break;
                 case 3:
-                    myQueue.print();
+                    myQueueK.print8();
                     break;
                 case 4:
-                    myQueue.peek();
+                    myQueueK.peek8();
                     break;
                 case 5:
-                    myQueue.clear();
+                    myQueueK.clear8();
                 case 6:
-                    myQueue.peekRear();
+                    myQueueK.peekRear8();
                     break;
                 default:
                     break;

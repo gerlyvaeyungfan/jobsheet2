@@ -1,42 +1,32 @@
-public class Queue {
-    public Kendaraan[] data;
+public class QueueK {
+    public int[] data;
     public int max, size, front, rear;
 
-    public Queue(int max) {
+    public QueueK(int max) {
         this.max = max;
-        this.data = new Kendaraan[max];
+        this.data = new int[max];
         this.size = 0;
         this.front = this.rear = -1;
     }
     
-    public boolean isEmpty() {
+    public boolean isEmptyK() {
         return (size == 0);
     }
 
-    public boolean isFull() {
+    public boolean isFullK() {
         return (size == max);
     }
 
-    public void peek() {
-        if (!isEmpty()) {
-            System.out.println("Elemen terdepan:");
-            System.out.println(data[front]);
+    public void peekK() {
+        if (!isEmptyK()) {
+            System.out.println("Elemen terdepan: " + data[front]);
         } else {
             System.out.println("Queue kosong.");
         }
     }
 
-    public void peekRear() {
-        if (!isEmpty()) {
-            System.out.println("Kendaraan di posisi paling belakang:");
-            System.out.println(data[rear]);
-        } else {
-            System.out.println("Queue kosong.");
-        }
-    }
-
-    public void print() {
-        if (isEmpty()) {
+    public void printK() {
+        if (isEmptyK()) {
             System.out.println("Queue kosong");
         } else {
             int i = front;
@@ -46,21 +36,21 @@ public class Queue {
                 i = (i + 1) % max;
             }
 
-            System.out.println(data[i]);
+            System.out.print(data[i] + " ");
             System.out.println("\nJumlah elemen: " + size);
         }
     }
 
-    public void clear() {
+    public void clearK() {
         front = rear = -1;
         size = 0;
     }
 
-    public void enqueue(Kendaraan dt) {
-        if (isFull()) {
+    public void enqueueK(int dt) {
+        if (isFullK()) {
             System.out.println("Queue sudah penuh");
         } else {
-            if (isEmpty()) {
+            if (isEmptyK()) {
                 front = rear = 0;
             } else if (rear == max - 1) {
                 rear = 0;
@@ -73,16 +63,16 @@ public class Queue {
         }
     }
 
-    public Kendaraan dequeue() {
-        Kendaraan temp = null;
+    public int dequeueK() {
+        int temp = 0;
 
-        if (isEmpty()) {
+        if (isEmptyK()) {
             System.out.println("Queue masih kosong");
         } else {
             temp = data[front];
             size--;
         
-            if (isEmpty()) {
+            if (isEmptyK()) {
                 front = rear = -1;
             } else if (front == max - 1) {
                 front = 0;

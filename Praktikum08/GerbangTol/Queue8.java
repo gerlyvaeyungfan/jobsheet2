@@ -1,32 +1,42 @@
-public class Queue {
-    public int[] data;
+public class Queue8 {
+    public Kendaraan8[] data;
     public int max, size, front, rear;
 
-    public Queue(int max) {
+    public Queue8(int max) {
         this.max = max;
-        this.data = new int[max];
+        this.data = new Kendaraan8[max];
         this.size = 0;
         this.front = this.rear = -1;
     }
     
-    public boolean isEmpty() {
+    public boolean isEmpty8() {
         return (size == 0);
     }
 
-    public boolean isFull() {
+    public boolean isFull8() {
         return (size == max);
     }
 
-    public void peek() {
-        if (!isEmpty()) {
-            System.out.println("Elemen terdepan: " + data[front]);
+    public void peek8() {
+        if (!isEmpty8()) {
+            System.out.println("Elemen terdepan:");
+            System.out.println(data[front]);
         } else {
             System.out.println("Queue kosong.");
         }
     }
 
-    public void print() {
-        if (isEmpty()) {
+    public void peekRear8() {
+        if (!isEmpty8()) {
+            System.out.println("Kendaraan di posisi paling belakang:");
+            System.out.println(data[rear]);
+        } else {
+            System.out.println("Queue kosong.");
+        }
+    }
+
+    public void print8() {
+        if (isEmpty8()) {
             System.out.println("Queue kosong");
         } else {
             int i = front;
@@ -36,21 +46,21 @@ public class Queue {
                 i = (i + 1) % max;
             }
 
-            System.out.print(data[i] + " ");
+            System.out.println(data[i]);
             System.out.println("\nJumlah elemen: " + size);
         }
     }
 
-    public void clear() {
+    public void clear8() {
         front = rear = -1;
         size = 0;
     }
 
-    public void enqueue(int dt) {
-        if (isFull()) {
+    public void enqueue8(Kendaraan8 dt) {
+        if (isFull8()) {
             System.out.println("Queue sudah penuh");
         } else {
-            if (isEmpty()) {
+            if (isEmpty8()) {
                 front = rear = 0;
             } else if (rear == max - 1) {
                 rear = 0;
@@ -63,16 +73,16 @@ public class Queue {
         }
     }
 
-    public int dequeue() {
-        int temp = 0;
+    public Kendaraan8 dequeue8() {
+        Kendaraan8 temp = null;
 
-        if (isEmpty()) {
+        if (isEmpty8()) {
             System.out.println("Queue masih kosong");
         } else {
             temp = data[front];
             size--;
         
-            if (isEmpty()) {
+            if (isEmpty8()) {
                 front = rear = -1;
             } else if (front == max - 1) {
                 front = 0;

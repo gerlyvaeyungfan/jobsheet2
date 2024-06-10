@@ -22,7 +22,7 @@ public class LinkedList {
     }
 
     public void addFirst(int input) {
-        Node newNode = new Node(input, null);
+        Node newNode = new Node(input);
 
         if(isEmpty()) {
             head = newNode;
@@ -33,7 +33,7 @@ public class LinkedList {
     }
 
     public void addLast(int input) {
-        Node newNode = new Node(input, null);
+        Node newNode = new Node(input);
 
         if(isEmpty()) {
             head = newNode;
@@ -49,7 +49,7 @@ public class LinkedList {
     }
 
     public void insertAfter(int key, int input) {
-        Node newNode = new Node(input, null);
+        Node newNode = new Node(input);
 
         if (!isEmpty()) {
             Node currentNode = head;

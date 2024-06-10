@@ -50,7 +50,7 @@ public class ProgramParkiran {
         String platNomor = scanner.nextLine();
         System.out.print("Durasi: ");
         int durasi = scanner.nextInt();
-        Kendaraan kendaraan = new Kendaraan(tipeKendaraan, platNomor, durasi);
+        KendaraanU kendaraan = new KendaraanU(tipeKendaraan, platNomor, durasi);
         parkiran.tambah(kendaraan);
     }
 
@@ -58,11 +58,12 @@ public class ProgramParkiran {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Masukkan nomor plat: ");
         String platCari = scanner.nextLine();
-        Kendaraan[] hasilCari = parkiran.binarySearchByPlat(platCari);
+        KendaraanU[] hasilCari = parkiran.binarySearchByPlat(platCari);
         if (hasilCari.length > 0) {
             System.out.println("\nData ditemukan:");
-            for (Kendaraan k : hasilCari) {
-                System.out.println("Tipe: " + k.getTipe() + ", No Plat: " + k.getPlat() + ", Durasi: " + k.getDurasi() + " jam, Biaya: " + k.getBiaya());
+            for (KendaraanU k : hasilCari) {
+                System.out.println("Tipe: " + k.getTipeU() + ", No Plat: " + k.getPlatU() +
+                ", Durasi: " + k.getDurasiU() + " jam, Biaya: " + k.getBiayaU());
             }
         } else {
             System.out.println("\n! Data tidak ditemukan !");
@@ -73,12 +74,12 @@ public class ProgramParkiran {
         int totalMobil = 0;
         int totalMotor = 0;
         for (int i = 0; i < parkiran.index; i++) {
-            switch (parkiran.daftarKendaraan[i].getTipe()) {
+            switch (parkiran.daftarKendaraan[i].getTipeU()) {
                 case "mobil":
-                    totalMobil += parkiran.daftarKendaraan[i].getBiaya();
+                    totalMobil += parkiran.daftarKendaraan[i].getBiayaU();
                     break;
                 case "motor":
-                    totalMotor += parkiran.daftarKendaraan[i].getBiaya();
+                    totalMotor += parkiran.daftarKendaraan[i].getBiayaU();
                     break;
             }
         }

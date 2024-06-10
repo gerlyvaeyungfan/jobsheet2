@@ -6,9 +6,6 @@ public class Kendaraan {
         this.noPlat = noPlat;
         this.noKartu = noKartu;
         this.saldo = saldo;
-    }
-
-    public String toString() {
-        return "No Plat: " + noPlat + ", No Kartu: " + noKartu + ", Saldo: " + saldo;
+        
     }
 }

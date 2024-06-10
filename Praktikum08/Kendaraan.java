@@ -6,6 +6,5 @@ public class Kendaraan {
         this.noPlat = noPlat;
         this.noKartu = noKartu;
         this.saldo = saldo;
-        
     }
 }
