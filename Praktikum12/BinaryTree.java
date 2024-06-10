@@ -84,7 +84,7 @@ public class BinaryTree {
         }
 
         if (successor != del.right) {
-            successorParent .left = successor.right;
+            successorParent.left = successor.right;
             successor.right = del.right;
         }
 
